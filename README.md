@@ -155,19 +155,12 @@ values grouping by the location.
 )
 ```
 
-::: {.output .stream .stdout}
     41.7 ms ± 0 ns per loop (mean ± std. dev. of 1 run, 1 loop each)
-:::
-:::
 
-::: {.cell .markdown id="mloFuUKYIPel"}
 # Conclusion
 
 Even on a relatively small dataset polars is about 3 times faster than
 pandas and about 2 times faster than using pandas with optimization.
-:::
 
-::: {.cell .code id="2MEtiE8mIPhN"}
 ``` python
 ```
-:::
