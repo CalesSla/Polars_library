@@ -10,28 +10,21 @@ jupyter:
   nbformat_minor: 0
 ---
 
-<div class="cell markdown" id="U08HDI2kOsSI">
-
+::: {.cell .markdown id="U08HDI2kOsSI"}
 # Polars quickstart
 
 A quick overview of the polars library and the most common commands.
+:::
 
-</div>
-
-<div class="cell code" id="xIA3r4o0Mlrw">
-
+::: {.cell .code id="xIA3r4o0Mlrw"}
 ``` python
 # Import the library
 
 import polars as pl
 ```
+:::
 
-</div>
-
-<div class="cell code"
-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:882}"
-id="ITv_7P3LO7q3" outputId="532d9391-6204-41ac-9f23-9a5c170f22e0">
-
+::: {.cell .code colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":882}" id="ITv_7P3LO7q3" outputId="532d9391-6204-41ac-9f23-9a5c170f22e0"}
 ``` python
 # Read a csv file
 
@@ -40,88 +33,47 @@ df = pl.read_csv(csv_file)
 df
 ```
 
-<div class="output execute_result" execution_count="10">
+::: {.output .execute_result execution_count="10"}
+```{=html}
+<div><style>
+.dataframe > thead > tr > th,
+.dataframe > tbody > tr > td {
+  text-align: right;
+}
+</style>
+<small>shape: (891, 12)</small><table border="1" class="dataframe"><thead><tr><th>PassengerId</th><th>Survived</th><th>Pclass</th><th>Name</th><th>Sex</th><th>Age</th><th>SibSp</th><th>Parch</th><th>Ticket</th><th>Fare</th><th>Cabin</th><th>Embarked</th></tr><tr><td>i64</td><td>i64</td><td>i64</td><td>str</td><td>str</td><td>f64</td><td>i64</td><td>i64</td><td>str</td><td>f64</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>1</td><td>0</td><td>3</td><td>&quot;Braund, Mr. Ow…</td><td>&quot;male&quot;</td><td>22.0</td><td>1</td><td>0</td><td>&quot;A/5 21171&quot;</td><td>7.25</td><td>null</td><td>&quot;S&quot;</td></tr><tr><td>2</td><td>1</td><td>1</td><td>&quot;Cumings, Mrs. …</td><td>&quot;female&quot;</td><td>38.0</td><td>1</td><td>0</td><td>&quot;PC 17599&quot;</td><td>71.2833</td><td>&quot;C85&quot;</td><td>&quot;C&quot;</td></tr><tr><td>3</td><td>1</td><td>3</td><td>&quot;Heikkinen, Mis…</td><td>&quot;female&quot;</td><td>26.0</td><td>0</td><td>0</td><td>&quot;STON/O2. 31012…</td><td>7.925</td><td>null</td><td>&quot;S&quot;</td></tr><tr><td>4</td><td>1</td><td>1</td><td>&quot;Futrelle, Mrs.…</td><td>&quot;female&quot;</td><td>35.0</td><td>1</td><td>0</td><td>&quot;113803&quot;</td><td>53.1</td><td>&quot;C123&quot;</td><td>&quot;S&quot;</td></tr><tr><td>5</td><td>0</td><td>3</td><td>&quot;Allen, Mr. Wil…</td><td>&quot;male&quot;</td><td>35.0</td><td>0</td><td>0</td><td>&quot;373450&quot;</td><td>8.05</td><td>null</td><td>&quot;S&quot;</td></tr><tr><td>6</td><td>0</td><td>3</td><td>&quot;Moran, Mr. Jam…</td><td>&quot;male&quot;</td><td>null</td><td>0</td><td>0</td><td>&quot;330877&quot;</td><td>8.4583</td><td>null</td><td>&quot;Q&quot;</td></tr><tr><td>7</td><td>0</td><td>1</td><td>&quot;McCarthy, Mr. …</td><td>&quot;male&quot;</td><td>54.0</td><td>0</td><td>0</td><td>&quot;17463&quot;</td><td>51.8625</td><td>&quot;E46&quot;</td><td>&quot;S&quot;</td></tr><tr><td>8</td><td>0</td><td>3</td><td>&quot;Palsson, Maste…</td><td>&quot;male&quot;</td><td>2.0</td><td>3</td><td>1</td><td>&quot;349909&quot;</td><td>21.075</td><td>null</td><td>&quot;S&quot;</td></tr><tr><td>9</td><td>1</td><td>3</td><td>&quot;Johnson, Mrs. …</td><td>&quot;female&quot;</td><td>27.0</td><td>0</td><td>2</td><td>&quot;347742&quot;</td><td>11.1333</td><td>null</td><td>&quot;S&quot;</td></tr><tr><td>10</td><td>1</td><td>2</td><td>&quot;Nasser, Mrs. N…</td><td>&quot;female&quot;</td><td>14.0</td><td>1</td><td>0</td><td>&quot;237736&quot;</td><td>30.0708</td><td>null</td><td>&quot;C&quot;</td></tr><tr><td>11</td><td>1</td><td>3</td><td>&quot;Sandstrom, Mis…</td><td>&quot;female&quot;</td><td>4.0</td><td>1</td><td>1</td><td>&quot;PP 9549&quot;</td><td>16.7</td><td>&quot;G6&quot;</td><td>&quot;S&quot;</td></tr><tr><td>12</td><td>1</td><td>1</td><td>&quot;Bonnell, Miss.…</td><td>&quot;female&quot;</td><td>58.0</td><td>0</td><td>0</td><td>&quot;113783&quot;</td><td>26.55</td><td>&quot;C103&quot;</td><td>&quot;S&quot;</td></tr><tr><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td></tr><tr><td>880</td><td>1</td><td>1</td><td>&quot;Potter, Mrs. T…</td><td>&quot;female&quot;</td><td>56.0</td><td>0</td><td>1</td><td>&quot;11767&quot;</td><td>83.1583</td><td>&quot;C50&quot;</td><td>&quot;C&quot;</td></tr><tr><td>881</td><td>1</td><td>2</td><td>&quot;Shelley, Mrs. …</td><td>&quot;female&quot;</td><td>25.0</td><td>0</td><td>1</td><td>&quot;230433&quot;</td><td>26.0</td><td>null</td><td>&quot;S&quot;</td></tr><tr><td>882</td><td>0</td><td>3</td><td>&quot;Markun, Mr. Jo…</td><td>&quot;male&quot;</td><td>33.0</td><td>0</td><td>0</td><td>&quot;349257&quot;</td><td>7.8958</td><td>null</td><td>&quot;S&quot;</td></tr><tr><td>883</td><td>0</td><td>3</td><td>&quot;Dahlberg, Miss…</td><td>&quot;female&quot;</td><td>22.0</td><td>0</td><td>0</td><td>&quot;7552&quot;</td><td>10.5167</td><td>null</td><td>&quot;S&quot;</td></tr><tr><td>884</td><td>0</td><td>2</td><td>&quot;Banfield, Mr. …</td><td>&quot;male&quot;</td><td>28.0</td><td>0</td><td>0</td><td>&quot;C.A./SOTON 340…</td><td>10.5</td><td>null</td><td>&quot;S&quot;</td></tr><tr><td>885</td><td>0</td><td>3</td><td>&quot;Sutehall, Mr. …</td><td>&quot;male&quot;</td><td>25.0</td><td>0</td><td>0</td><td>&quot;SOTON/OQ 39207…</td><td>7.05</td><td>null</td><td>&quot;S&quot;</td></tr><tr><td>886</td><td>0</td><td>3</td><td>&quot;Rice, Mrs. Wil…</td><td>&quot;female&quot;</td><td>39.0</td><td>0</td><td>5</td><td>&quot;382652&quot;</td><td>29.125</td><td>null</td><td>&quot;Q&quot;</td></tr><tr><td>887</td><td>0</td><td>2</td><td>&quot;Montvila, Rev.…</td><td>&quot;male&quot;</td><td>27.0</td><td>0</td><td>0</td><td>&quot;211536&quot;</td><td>13.0</td><td>null</td><td>&quot;S&quot;</td></tr><tr><td>888</td><td>1</td><td>1</td><td>&quot;Graham, Miss. …</td><td>&quot;female&quot;</td><td>19.0</td><td>0</td><td>0</td><td>&quot;112053&quot;</td><td>30.0</td><td>&quot;B42&quot;</td><td>&quot;S&quot;</td></tr><tr><td>889</td><td>0</td><td>3</td><td>&quot;Johnston, Miss…</td><td>&quot;female&quot;</td><td>null</td><td>1</td><td>2</td><td>&quot;W./C. 6607&quot;</td><td>23.45</td><td>null</td><td>&quot;S&quot;</td></tr><tr><td>890</td><td>1</td><td>1</td><td>&quot;Behr, Mr. Karl…</td><td>&quot;male&quot;</td><td>26.0</td><td>0</td><td>0</td><td>&quot;111369&quot;</td><td>30.0</td><td>&quot;C148&quot;</td><td>&quot;C&quot;</td></tr><tr><td>891</td><td>0</td><td>3</td><td>&quot;Dooley, Mr. Pa…</td><td>&quot;male&quot;</td><td>32.0</td><td>0</td><td>0</td><td>&quot;370376&quot;</td><td>7.75</td><td>null</td><td>&quot;Q&quot;</td></tr></tbody></table></div>
+```
+:::
+:::
 
-    shape: (891, 12)
-    ┌─────────────┬──────────┬────────┬──────────────────┬───┬────────────┬─────────┬───────┬──────────┐
-    │ PassengerId ┆ Survived ┆ Pclass ┆ Name             ┆ … ┆ Ticket     ┆ Fare    ┆ Cabin ┆ Embarked │
-    │ ---         ┆ ---      ┆ ---    ┆ ---              ┆   ┆ ---        ┆ ---     ┆ ---   ┆ ---      │
-    │ i64         ┆ i64      ┆ i64    ┆ str              ┆   ┆ str        ┆ f64     ┆ str   ┆ str      │
-    ╞═════════════╪══════════╪════════╪══════════════════╪═══╪════════════╪═════════╪═══════╪══════════╡
-    │ 1           ┆ 0        ┆ 3      ┆ Braund, Mr. Owen ┆ … ┆ A/5 21171  ┆ 7.25    ┆ null  ┆ S        │
-    │             ┆          ┆        ┆ Harris           ┆   ┆            ┆         ┆       ┆          │
-    │ 2           ┆ 1        ┆ 1      ┆ Cumings, Mrs.    ┆ … ┆ PC 17599   ┆ 71.2833 ┆ C85   ┆ C        │
-    │             ┆          ┆        ┆ John Bradley     ┆   ┆            ┆         ┆       ┆          │
-    │             ┆          ┆        ┆ (Flor…           ┆   ┆            ┆         ┆       ┆          │
-    │ 3           ┆ 1        ┆ 3      ┆ Heikkinen, Miss. ┆ … ┆ STON/O2.   ┆ 7.925   ┆ null  ┆ S        │
-    │             ┆          ┆        ┆ Laina            ┆   ┆ 3101282    ┆         ┆       ┆          │
-    │ 4           ┆ 1        ┆ 1      ┆ Futrelle, Mrs.   ┆ … ┆ 113803     ┆ 53.1    ┆ C123  ┆ S        │
-    │             ┆          ┆        ┆ Jacques Heath    ┆   ┆            ┆         ┆       ┆          │
-    │             ┆          ┆        ┆ (Li…             ┆   ┆            ┆         ┆       ┆          │
-    │ …           ┆ …        ┆ …      ┆ …                ┆ … ┆ …          ┆ …       ┆ …     ┆ …        │
-    │ 888         ┆ 1        ┆ 1      ┆ Graham, Miss.    ┆ … ┆ 112053     ┆ 30.0    ┆ B42   ┆ S        │
-    │             ┆          ┆        ┆ Margaret Edith   ┆   ┆            ┆         ┆       ┆          │
-    │ 889         ┆ 0        ┆ 3      ┆ Johnston, Miss.  ┆ … ┆ W./C. 6607 ┆ 23.45   ┆ null  ┆ S        │
-    │             ┆          ┆        ┆ Catherine Helen  ┆   ┆            ┆         ┆       ┆          │
-    │             ┆          ┆        ┆ …                ┆   ┆            ┆         ┆       ┆          │
-    │ 890         ┆ 1        ┆ 1      ┆ Behr, Mr. Karl   ┆ … ┆ 111369     ┆ 30.0    ┆ C148  ┆ C        │
-    │             ┆          ┆        ┆ Howell           ┆   ┆            ┆         ┆       ┆          │
-    │ 891         ┆ 0        ┆ 3      ┆ Dooley, Mr.      ┆ … ┆ 370376     ┆ 7.75    ┆ null  ┆ Q        │
-    │             ┆          ┆        ┆ Patrick          ┆   ┆            ┆         ┆       ┆          │
-    └─────────────┴──────────┴────────┴──────────────────┴───┴────────────┴─────────┴───────┴──────────┘
-
-</div>
-
-</div>
-
-<div class="cell code"
-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255}"
-id="ag-6k4K0NAoX" outputId="c4841aae-c4af-4806-e7b2-f3bbe45edbc3">
-
+::: {.cell .code colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":255}" id="ag-6k4K0NAoX" outputId="c4841aae-c4af-4806-e7b2-f3bbe45edbc3"}
 ``` python
 # An overview of the dataset
 
 df.head()
 ```
 
-<div class="output execute_result" execution_count="12">
+::: {.output .execute_result execution_count="12"}
+```{=html}
+<div><style>
+.dataframe > thead > tr > th,
+.dataframe > tbody > tr > td {
+  text-align: right;
+}
+</style>
+<small>shape: (5, 12)</small><table border="1" class="dataframe"><thead><tr><th>PassengerId</th><th>Survived</th><th>Pclass</th><th>Name</th><th>Sex</th><th>Age</th><th>SibSp</th><th>Parch</th><th>Ticket</th><th>Fare</th><th>Cabin</th><th>Embarked</th></tr><tr><td>i64</td><td>i64</td><td>i64</td><td>str</td><td>str</td><td>f64</td><td>i64</td><td>i64</td><td>str</td><td>f64</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>1</td><td>0</td><td>3</td><td>&quot;Braund, Mr. Ow…</td><td>&quot;male&quot;</td><td>22.0</td><td>1</td><td>0</td><td>&quot;A/5 21171&quot;</td><td>7.25</td><td>null</td><td>&quot;S&quot;</td></tr><tr><td>2</td><td>1</td><td>1</td><td>&quot;Cumings, Mrs. …</td><td>&quot;female&quot;</td><td>38.0</td><td>1</td><td>0</td><td>&quot;PC 17599&quot;</td><td>71.2833</td><td>&quot;C85&quot;</td><td>&quot;C&quot;</td></tr><tr><td>3</td><td>1</td><td>3</td><td>&quot;Heikkinen, Mis…</td><td>&quot;female&quot;</td><td>26.0</td><td>0</td><td>0</td><td>&quot;STON/O2. 31012…</td><td>7.925</td><td>null</td><td>&quot;S&quot;</td></tr><tr><td>4</td><td>1</td><td>1</td><td>&quot;Futrelle, Mrs.…</td><td>&quot;female&quot;</td><td>35.0</td><td>1</td><td>0</td><td>&quot;113803&quot;</td><td>53.1</td><td>&quot;C123&quot;</td><td>&quot;S&quot;</td></tr><tr><td>5</td><td>0</td><td>3</td><td>&quot;Allen, Mr. Wil…</td><td>&quot;male&quot;</td><td>35.0</td><td>0</td><td>0</td><td>&quot;373450&quot;</td><td>8.05</td><td>null</td><td>&quot;S&quot;</td></tr></tbody></table></div>
+```
+:::
+:::
 
-    shape: (5, 12)
-    ┌─────────────┬──────────┬────────┬───────────────────┬───┬───────────┬─────────┬───────┬──────────┐
-    │ PassengerId ┆ Survived ┆ Pclass ┆ Name              ┆ … ┆ Ticket    ┆ Fare    ┆ Cabin ┆ Embarked │
-    │ ---         ┆ ---      ┆ ---    ┆ ---               ┆   ┆ ---       ┆ ---     ┆ ---   ┆ ---      │
-    │ i64         ┆ i64      ┆ i64    ┆ str               ┆   ┆ str       ┆ f64     ┆ str   ┆ str      │
-    ╞═════════════╪══════════╪════════╪═══════════════════╪═══╪═══════════╪═════════╪═══════╪══════════╡
-    │ 1           ┆ 0        ┆ 3      ┆ Braund, Mr. Owen  ┆ … ┆ A/5 21171 ┆ 7.25    ┆ null  ┆ S        │
-    │             ┆          ┆        ┆ Harris            ┆   ┆           ┆         ┆       ┆          │
-    │ 2           ┆ 1        ┆ 1      ┆ Cumings, Mrs.     ┆ … ┆ PC 17599  ┆ 71.2833 ┆ C85   ┆ C        │
-    │             ┆          ┆        ┆ John Bradley      ┆   ┆           ┆         ┆       ┆          │
-    │             ┆          ┆        ┆ (Flor…            ┆   ┆           ┆         ┆       ┆          │
-    │ 3           ┆ 1        ┆ 3      ┆ Heikkinen, Miss.  ┆ … ┆ STON/O2.  ┆ 7.925   ┆ null  ┆ S        │
-    │             ┆          ┆        ┆ Laina             ┆   ┆ 3101282   ┆         ┆       ┆          │
-    │ 4           ┆ 1        ┆ 1      ┆ Futrelle, Mrs.    ┆ … ┆ 113803    ┆ 53.1    ┆ C123  ┆ S        │
-    │             ┆          ┆        ┆ Jacques Heath     ┆   ┆           ┆         ┆       ┆          │
-    │             ┆          ┆        ┆ (Li…              ┆   ┆           ┆         ┆       ┆          │
-    │ 5           ┆ 0        ┆ 3      ┆ Allen, Mr.        ┆ … ┆ 373450    ┆ 8.05    ┆ null  ┆ S        │
-    │             ┆          ┆        ┆ William Henry     ┆   ┆           ┆         ┆       ┆          │
-    └─────────────┴──────────┴────────┴───────────────────┴───┴───────────┴─────────┴───────┴──────────┘
-
-</div>
-
-</div>
-
-<div class="cell code"
-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="jaMvosSVObVX" outputId="4799e1c1-9038-4f12-a728-ca8420849e63">
-
+::: {.cell .code colab="{\"base_uri\":\"https://localhost:8080/\"}" id="jaMvosSVObVX" outputId="4799e1c1-9038-4f12-a728-ca8420849e63"}
 ``` python
 # An alternative command to have a glimpse of the data
 
 print(df.glimpse())
 ```
 
-<div class="output stream stdout">
-
+::: {.output .stream .stdout}
     Rows: 891
     Columns: 12
     $ PassengerId <i64> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
@@ -138,169 +90,113 @@ print(df.glimpse())
     $ Embarked    <str> S, C, S, S, S, Q, S, S, S, C
 
     None
+:::
+:::
 
-</div>
-
-</div>
-
-<div class="cell markdown" id="QrM6PmEeOch_">
-
+::: {.cell .markdown id="QrM6PmEeOch_"}
 There are 2 main ways we can access the data in polars:
 
 1.  Use the familiar pandas-like synthax with square brackets
 2.  Using the native polars expression API. Typically this is a more
     performant approach that takes the full advantage of using polars.
+:::
 
-</div>
-
-<div class="cell code"
-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:192}"
-id="KDmbes81PTc7" outputId="46a0fe9e-a200-4e74-aaca-fbf899dc63db">
-
+::: {.cell .code colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":192}" id="KDmbes81PTc7" outputId="46a0fe9e-a200-4e74-aaca-fbf899dc63db"}
 ``` python
 # Option 1. Pandas synthax.
 
 df[['Pclass', 'Name', 'Age']][:3]
 ```
 
-<div class="output execute_result" execution_count="16">
+::: {.output .execute_result execution_count="16"}
+```{=html}
+<div><style>
+.dataframe > thead > tr > th,
+.dataframe > tbody > tr > td {
+  text-align: right;
+}
+</style>
+<small>shape: (3, 3)</small><table border="1" class="dataframe"><thead><tr><th>Pclass</th><th>Name</th><th>Age</th></tr><tr><td>i64</td><td>str</td><td>f64</td></tr></thead><tbody><tr><td>3</td><td>&quot;Braund, Mr. Ow…</td><td>22.0</td></tr><tr><td>1</td><td>&quot;Cumings, Mrs. …</td><td>38.0</td></tr><tr><td>3</td><td>&quot;Heikkinen, Mis…</td><td>26.0</td></tr></tbody></table></div>
+```
+:::
+:::
 
-    shape: (3, 3)
-    ┌────────┬───────────────────────────────────┬──────┐
-    │ Pclass ┆ Name                              ┆ Age  │
-    │ ---    ┆ ---                               ┆ ---  │
-    │ i64    ┆ str                               ┆ f64  │
-    ╞════════╪═══════════════════════════════════╪══════╡
-    │ 3      ┆ Braund, Mr. Owen Harris           ┆ 22.0 │
-    │ 1      ┆ Cumings, Mrs. John Bradley (Flor… ┆ 38.0 │
-    │ 3      ┆ Heikkinen, Miss. Laina            ┆ 26.0 │
-    └────────┴───────────────────────────────────┴──────┘
-
-</div>
-
-</div>
-
-<div class="cell code"
-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:882}"
-id="UlxNAiR4PTf8" outputId="ca63143d-20af-476d-8492-bf66246c70c0">
-
+::: {.cell .code colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":882}" id="UlxNAiR4PTf8" outputId="ca63143d-20af-476d-8492-bf66246c70c0"}
 ``` python
 # Option 2. Expression API.
 
 df.select(pl.col('Pclass'), pl.col('Name'), pl.col('Age'))
 ```
 
-<div class="output execute_result" execution_count="18">
+::: {.output .execute_result execution_count="18"}
+```{=html}
+<div><style>
+.dataframe > thead > tr > th,
+.dataframe > tbody > tr > td {
+  text-align: right;
+}
+</style>
+<small>shape: (891, 3)</small><table border="1" class="dataframe"><thead><tr><th>Pclass</th><th>Name</th><th>Age</th></tr><tr><td>i64</td><td>str</td><td>f64</td></tr></thead><tbody><tr><td>3</td><td>&quot;Braund, Mr. Ow…</td><td>22.0</td></tr><tr><td>1</td><td>&quot;Cumings, Mrs. …</td><td>38.0</td></tr><tr><td>3</td><td>&quot;Heikkinen, Mis…</td><td>26.0</td></tr><tr><td>1</td><td>&quot;Futrelle, Mrs.…</td><td>35.0</td></tr><tr><td>3</td><td>&quot;Allen, Mr. Wil…</td><td>35.0</td></tr><tr><td>3</td><td>&quot;Moran, Mr. Jam…</td><td>null</td></tr><tr><td>1</td><td>&quot;McCarthy, Mr. …</td><td>54.0</td></tr><tr><td>3</td><td>&quot;Palsson, Maste…</td><td>2.0</td></tr><tr><td>3</td><td>&quot;Johnson, Mrs. …</td><td>27.0</td></tr><tr><td>2</td><td>&quot;Nasser, Mrs. N…</td><td>14.0</td></tr><tr><td>3</td><td>&quot;Sandstrom, Mis…</td><td>4.0</td></tr><tr><td>1</td><td>&quot;Bonnell, Miss.…</td><td>58.0</td></tr><tr><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td></tr><tr><td>1</td><td>&quot;Potter, Mrs. T…</td><td>56.0</td></tr><tr><td>2</td><td>&quot;Shelley, Mrs. …</td><td>25.0</td></tr><tr><td>3</td><td>&quot;Markun, Mr. Jo…</td><td>33.0</td></tr><tr><td>3</td><td>&quot;Dahlberg, Miss…</td><td>22.0</td></tr><tr><td>2</td><td>&quot;Banfield, Mr. …</td><td>28.0</td></tr><tr><td>3</td><td>&quot;Sutehall, Mr. …</td><td>25.0</td></tr><tr><td>3</td><td>&quot;Rice, Mrs. Wil…</td><td>39.0</td></tr><tr><td>2</td><td>&quot;Montvila, Rev.…</td><td>27.0</td></tr><tr><td>1</td><td>&quot;Graham, Miss. …</td><td>19.0</td></tr><tr><td>3</td><td>&quot;Johnston, Miss…</td><td>null</td></tr><tr><td>1</td><td>&quot;Behr, Mr. Karl…</td><td>26.0</td></tr><tr><td>3</td><td>&quot;Dooley, Mr. Pa…</td><td>32.0</td></tr></tbody></table></div>
+```
+:::
+:::
 
-    shape: (891, 3)
-    ┌────────┬───────────────────────────────────┬──────┐
-    │ Pclass ┆ Name                              ┆ Age  │
-    │ ---    ┆ ---                               ┆ ---  │
-    │ i64    ┆ str                               ┆ f64  │
-    ╞════════╪═══════════════════════════════════╪══════╡
-    │ 3      ┆ Braund, Mr. Owen Harris           ┆ 22.0 │
-    │ 1      ┆ Cumings, Mrs. John Bradley (Flor… ┆ 38.0 │
-    │ 3      ┆ Heikkinen, Miss. Laina            ┆ 26.0 │
-    │ 1      ┆ Futrelle, Mrs. Jacques Heath (Li… ┆ 35.0 │
-    │ …      ┆ …                                 ┆ …    │
-    │ 1      ┆ Graham, Miss. Margaret Edith      ┆ 19.0 │
-    │ 3      ┆ Johnston, Miss. Catherine Helen … ┆ null │
-    │ 1      ┆ Behr, Mr. Karl Howell             ┆ 26.0 │
-    │ 3      ┆ Dooley, Mr. Patrick               ┆ 32.0 │
-    └────────┴───────────────────────────────────┴──────┘
-
-</div>
-
-</div>
-
-<div class="cell markdown" id="kTt19ulMYShx">
-
+::: {.cell .markdown id="kTt19ulMYShx"}
 The additional advantage of using the expression API is that we can
 transform columns before returning them, which follows the
-"Transformations and Actions" approach and is faster since it transforms
-multiple columns in parallel.
+\"Transformations and Actions\" approach and is faster since it
+transforms multiple columns in parallel.
+:::
 
-</div>
-
-<div class="cell code"
-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:882}"
-id="LfhJQVp3Yfzz" outputId="aa90c20e-d97e-4367-ed1d-929b19cc2f29">
-
+::: {.cell .code colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":882}" id="LfhJQVp3Yfzz" outputId="aa90c20e-d97e-4367-ed1d-929b19cc2f29"}
 ``` python
 # An example of using the expression API with column transformations on the fly
 
 df.select(pl.col('Pclass'), pl.col('Name').str.to_lowercase(), pl.col('Age').round(2))
 ```
 
-<div class="output execute_result" execution_count="20">
+::: {.output .execute_result execution_count="20"}
+```{=html}
+<div><style>
+.dataframe > thead > tr > th,
+.dataframe > tbody > tr > td {
+  text-align: right;
+}
+</style>
+<small>shape: (891, 3)</small><table border="1" class="dataframe"><thead><tr><th>Pclass</th><th>Name</th><th>Age</th></tr><tr><td>i64</td><td>str</td><td>f64</td></tr></thead><tbody><tr><td>3</td><td>&quot;braund, mr. ow…</td><td>22.0</td></tr><tr><td>1</td><td>&quot;cumings, mrs. …</td><td>38.0</td></tr><tr><td>3</td><td>&quot;heikkinen, mis…</td><td>26.0</td></tr><tr><td>1</td><td>&quot;futrelle, mrs.…</td><td>35.0</td></tr><tr><td>3</td><td>&quot;allen, mr. wil…</td><td>35.0</td></tr><tr><td>3</td><td>&quot;moran, mr. jam…</td><td>null</td></tr><tr><td>1</td><td>&quot;mccarthy, mr. …</td><td>54.0</td></tr><tr><td>3</td><td>&quot;palsson, maste…</td><td>2.0</td></tr><tr><td>3</td><td>&quot;johnson, mrs. …</td><td>27.0</td></tr><tr><td>2</td><td>&quot;nasser, mrs. n…</td><td>14.0</td></tr><tr><td>3</td><td>&quot;sandstrom, mis…</td><td>4.0</td></tr><tr><td>1</td><td>&quot;bonnell, miss.…</td><td>58.0</td></tr><tr><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td></tr><tr><td>1</td><td>&quot;potter, mrs. t…</td><td>56.0</td></tr><tr><td>2</td><td>&quot;shelley, mrs. …</td><td>25.0</td></tr><tr><td>3</td><td>&quot;markun, mr. jo…</td><td>33.0</td></tr><tr><td>3</td><td>&quot;dahlberg, miss…</td><td>22.0</td></tr><tr><td>2</td><td>&quot;banfield, mr. …</td><td>28.0</td></tr><tr><td>3</td><td>&quot;sutehall, mr. …</td><td>25.0</td></tr><tr><td>3</td><td>&quot;rice, mrs. wil…</td><td>39.0</td></tr><tr><td>2</td><td>&quot;montvila, rev.…</td><td>27.0</td></tr><tr><td>1</td><td>&quot;graham, miss. …</td><td>19.0</td></tr><tr><td>3</td><td>&quot;johnston, miss…</td><td>null</td></tr><tr><td>1</td><td>&quot;behr, mr. karl…</td><td>26.0</td></tr><tr><td>3</td><td>&quot;dooley, mr. pa…</td><td>32.0</td></tr></tbody></table></div>
+```
+:::
+:::
 
-    shape: (891, 3)
-    ┌────────┬───────────────────────────────────┬──────┐
-    │ Pclass ┆ Name                              ┆ Age  │
-    │ ---    ┆ ---                               ┆ ---  │
-    │ i64    ┆ str                               ┆ f64  │
-    ╞════════╪═══════════════════════════════════╪══════╡
-    │ 3      ┆ braund, mr. owen harris           ┆ 22.0 │
-    │ 1      ┆ cumings, mrs. john bradley (flor… ┆ 38.0 │
-    │ 3      ┆ heikkinen, miss. laina            ┆ 26.0 │
-    │ 1      ┆ futrelle, mrs. jacques heath (li… ┆ 35.0 │
-    │ …      ┆ …                                 ┆ …    │
-    │ 1      ┆ graham, miss. margaret edith      ┆ 19.0 │
-    │ 3      ┆ johnston, miss. catherine helen … ┆ null │
-    │ 1      ┆ behr, mr. karl howell             ┆ 26.0 │
-    │ 3      ┆ dooley, mr. patrick               ┆ 32.0 │
-    └────────┴───────────────────────────────────┴──────┘
-
-</div>
-
-</div>
-
-<div class="cell markdown" id="5GYP0E0SYf2V">
-
+::: {.cell .markdown id="5GYP0E0SYf2V"}
 Another example of parallelization is when we use the expression API
 with queries and/or aggregations.
+:::
 
-</div>
-
-<div class="cell code"
-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:286}"
-id="4xJD5nefYf4j" outputId="f5494ba8-ed4b-45e8-85ca-624fa8c9a8eb">
-
+::: {.cell .code colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":286}" id="4xJD5nefYf4j" outputId="f5494ba8-ed4b-45e8-85ca-624fa8c9a8eb"}
 ``` python
 df.groupby(['Survived', 'Pclass']).agg(pl.col('PassengerId').count().alias('counts'))
 ```
 
-<div class="output execute_result" execution_count="24">
+::: {.output .execute_result execution_count="24"}
+```{=html}
+<div><style>
+.dataframe > thead > tr > th,
+.dataframe > tbody > tr > td {
+  text-align: right;
+}
+</style>
+<small>shape: (6, 3)</small><table border="1" class="dataframe"><thead><tr><th>Survived</th><th>Pclass</th><th>counts</th></tr><tr><td>i64</td><td>i64</td><td>u32</td></tr></thead><tbody><tr><td>1</td><td>2</td><td>87</td></tr><tr><td>1</td><td>3</td><td>119</td></tr><tr><td>0</td><td>3</td><td>372</td></tr><tr><td>0</td><td>2</td><td>97</td></tr><tr><td>1</td><td>1</td><td>136</td></tr><tr><td>0</td><td>1</td><td>80</td></tr></tbody></table></div>
+```
+:::
+:::
 
-    shape: (6, 3)
-    ┌──────────┬────────┬────────┐
-    │ Survived ┆ Pclass ┆ counts │
-    │ ---      ┆ ---    ┆ ---    │
-    │ i64      ┆ i64    ┆ u32    │
-    ╞══════════╪════════╪════════╡
-    │ 1        ┆ 2      ┆ 87     │
-    │ 1        ┆ 3      ┆ 119    │
-    │ 0        ┆ 3      ┆ 372    │
-    │ 0        ┆ 2      ┆ 97     │
-    │ 1        ┆ 1      ┆ 136    │
-    │ 0        ┆ 1      ┆ 80     │
-    └──────────┴────────┴────────┘
-
-</div>
-
-</div>
-
-<div class="cell markdown" id="AR2UV1IgYf6u">
-
+::: {.cell .markdown id="AR2UV1IgYf6u"}
 Polars also supports the usage of visualization libraries directly on a
 polars dataframe.
+:::
 
-</div>
-
-<div class="cell code"
-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:542}"
-id="Er3_H5pRYf8n" outputId="8e18a3c8-3529-4e41-ddaf-9d33ce36264f">
-
+::: {.cell .code colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":542}" id="Er3_H5pRYf8n" outputId="8e18a3c8-3529-4e41-ddaf-9d33ce36264f"}
 ``` python
 # import plotly
 
@@ -309,8 +205,8 @@ import plotly.express as px
 px.scatter(x = df['Age'], y = df['Fare'])
 ```
 
-<div class="output display_data">
-
+::: {.output .display_data}
+```{=html}
 <html>
 <head><meta charset="utf-8" /></head>
 <body>
@@ -342,106 +238,79 @@ if (outputEl) {{
                         })                };                            </script>        </div>
 </body>
 </html>
+```
+:::
+:::
 
-</div>
-
-</div>
-
-<div class="cell markdown" id="mbGuyY1JatXz">
-
+::: {.cell .markdown id="mbGuyY1JatXz"}
 # Lazy mode
 
 Another key advantage of using polars is the lazy mode, in which polars
-doesn't run each command line-by-line, but instead gathers the full
+doesn\'t run each command line-by-line, but instead gathers the full
 query together to run in one go. It is a more efficient way and is an
 extention of the automatic query optimization.
 
-In the example below we'll use the lazy query using scan_csv instead of
+In the example below we\'ll use the lazy query using scan_csv instead of
 read_csv. Also instead of evaluating the query we use
 describe_optimized_plan() method produced by polars query optimizer.
+:::
 
-</div>
-
-<div class="cell code"
-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="y--dSiKLay05" outputId="43fe87d8-f3e1-440a-b86b-4e1ed2456d8e">
-
+::: {.cell .code colab="{\"base_uri\":\"https://localhost:8080/\"}" id="y--dSiKLay05" outputId="43fe87d8-f3e1-440a-b86b-4e1ed2456d8e"}
 ``` python
 print(pl.scan_csv(csv_file).groupby(['Survived', 'Pclass']).agg(pl.col('PassengerId').count().alias('counts')).describe_optimized_plan())
 ```
 
-<div class="output stream stdout">
-
+::: {.output .stream .stdout}
     AGGREGATE
     	[col("PassengerId").count().alias("counts")] BY [col("Survived"), col("Pclass")] FROM
     	
       CSV SCAN Titanic.csv
       PROJECT 3/12 COLUMNS
+:::
+:::
 
-</div>
-
-</div>
-
-<div class="cell markdown" id="zU_JWPrPay3G">
-
+::: {.cell .markdown id="zU_JWPrPay3G"}
 In this example polars has identified that we only need 3 columns
 instead of all 12.
 
 Although most optimizations can be done manually, it is convenient that
 polars is able to figure them out automatically. Also, it might apply
 some optimizations that me might not know about.
+:::
 
-</div>
-
-<div class="cell markdown" id="R0AeLmjbay5I">
-
+::: {.cell .markdown id="R0AeLmjbay5I"}
 # Streaming
 
 Streaming is another important feature of polars as it allows it to run
 large datasets in batches so that we can work with the datasets that are
 much larger than the available memory. A simple way to apply streaming
 is to use the streaming=True argument in the collect method.
+:::
 
-</div>
-
-<div class="cell code"
-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:286}"
-id="CK0o5WSKay7R" outputId="8c946e20-6d23-46bf-c906-a3a2b7f1e5d4">
-
+::: {.cell .code colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":286}" id="CK0o5WSKay7R" outputId="8c946e20-6d23-46bf-c906-a3a2b7f1e5d4"}
 ``` python
 pl.scan_csv(csv_file).groupby(['Survived', 'Pclass']).agg(pl.col('PassengerId').count().alias('counts')).collect(streaming = True)
 ```
 
-<div class="output execute_result" execution_count="27">
+::: {.output .execute_result execution_count="27"}
+```{=html}
+<div><style>
+.dataframe > thead > tr > th,
+.dataframe > tbody > tr > td {
+  text-align: right;
+}
+</style>
+<small>shape: (6, 3)</small><table border="1" class="dataframe"><thead><tr><th>Survived</th><th>Pclass</th><th>counts</th></tr><tr><td>i64</td><td>i64</td><td>u32</td></tr></thead><tbody><tr><td>0</td><td>3</td><td>372</td></tr><tr><td>1</td><td>3</td><td>119</td></tr><tr><td>1</td><td>1</td><td>136</td></tr><tr><td>1</td><td>2</td><td>87</td></tr><tr><td>0</td><td>2</td><td>97</td></tr><tr><td>0</td><td>1</td><td>80</td></tr></tbody></table></div>
+```
+:::
+:::
 
-    shape: (6, 3)
-    ┌──────────┬────────┬────────┐
-    │ Survived ┆ Pclass ┆ counts │
-    │ ---      ┆ ---    ┆ ---    │
-    │ i64      ┆ i64    ┆ u32    │
-    ╞══════════╪════════╪════════╡
-    │ 0        ┆ 3      ┆ 372    │
-    │ 1        ┆ 3      ┆ 119    │
-    │ 1        ┆ 1      ┆ 136    │
-    │ 1        ┆ 2      ┆ 87     │
-    │ 0        ┆ 2      ┆ 97     │
-    │ 0        ┆ 1      ┆ 80     │
-    └──────────┴────────┴────────┘
-
-</div>
-
-</div>
-
-<div class="cell code" id="4O4tW9kddoIQ">
-
+::: {.cell .code id="4O4tW9kddoIQ"}
 ``` python
 ```
+:::
 
-</div>
-
-<div class="cell code" id="7iHK0Y1bdoKa">
-
+::: {.cell .code id="7iHK0Y1bdoKa"}
 ``` python
 ```
-
-</div>
+:::
