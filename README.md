@@ -18,27 +18,23 @@ jupyter:
 -   It works conveniently with CSV files, Excel spreadsheets, json
     etc\...
 -   It is a faster alternative to pandas
-:::
+-   
 
-::: {.cell .markdown id="hEm_mFRK-xls"}
 # Why polars vs pandas?
 
 -   Polars is much faster.
 -   Polars implements under-the-hood code optimization, including native
     parallelization.
 -   Polars code is easy and pandas-like.
-:::
 
-::: {.cell .code id="JRVyu6xi_soj"}
+
 ``` python
 # Import both libraries
 
 import polars as pl
 import pandas as pd
 ```
-:::
 
-::: {.cell .code colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":362}" id="56XJmt9B_srC" outputId="f598f867-d7a0-45ec-e8d9-d68ca8bfa822"}
 ``` python
 # Sample dataset ~ 14000 rows and 20 columns
 
@@ -46,7 +42,6 @@ csv_file = 'RankingsCombined.csv'
 pl.scan_csv(csv_file, ignore_errors=True).head(5).collect()
 ```
 
-::: {.output .execute_result execution_count="55"}
 ```{=html}
 <div><style>
 .dataframe > thead > tr > th,
