@@ -9,12 +9,8 @@ jupyter:
   nbformat: 4
   nbformat_minor: 0
 ---
-
-::: {.cell .markdown id="rBGq9T9efPVR"}
 ![Polars_vs_pandas_img.jpg](vertopal_774b33b377894201b753768fb2460c8e/3eba185d313bce7484730a47e02852237cda7b97.jpg)
-:::
 
-::: {.cell .markdown id="fssVmHOb-l4v"}
 # What is polars?
 
 -   Polars is a library for working with and manipulating dataframe that
