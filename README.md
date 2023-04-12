@@ -11,6 +11,7 @@ jupyter:
 ---
 ![Polars_vs_pandas_img.jpg](vertopal_774b33b377894201b753768fb2460c8e/3eba185d313bce7484730a47e02852237cda7b97.jpg)
 
+The following material is a result of combining multiple sources and examples. The backbone of it with most explanation and in depth material is: https://github.com/braaannigan/polars
 # What is polars?
 
 -   Polars is a library for working with and manipulating dataframe that
